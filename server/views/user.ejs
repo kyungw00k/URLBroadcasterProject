@@ -1,0 +1,183 @@
+			<div class="page-header" style="background:whiteSmoke url(/images/on.png) no-repeat right top">
+				<h1>Tell URL to your phone...<br />
+				<input type="text" class="xlarge" id="url" value="" placeholder="URL"/>
+				<button id="btn" data-loading-text="Sending..." class="btn primary" >Send</button></h1>
+			</div>
+			<div class="row">
+				<div class="span9">
+					<h3>Device(s)</h3>
+					<table class="zebra-striped">
+						<colgroup>
+							<col width="20" />
+							<col width="80" />
+							<col width="50" />
+							<col width="*" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th><input type="checkbox" id="btnSelectAll"/></th>
+								<th>Type</th>
+								<th>Version</th>
+								<th>ID</th>
+							</tr>
+						</thead>
+						<tbody id="uuidList">
+						<% if ( Object.keys(target).length ) { %>
+							<% for ( var uuid in target ) { %>
+							<tr>
+								<td><input type="checkbox" name="devices" /></td>
+								<td><%=target[uuid].devid%></td>
+								<td><%=target[uuid].osver%></td>
+								<td class="uuid"><%=uuid%></td>
+							</tr>
+							<% } %>
+						<% } else { %>
+							<tr>
+								<td colspan="4">There's no device.</td>
+							</tr>
+						<% } %>
+						</tbody>
+					</table>
+				</div>
+				<div class="span5">
+					<h4>What is URL Broadcaster?</h4>
+					<p>
+						Make easy to send a URL to the mobile devices!
+					</p>
+					
+					<h4>Supported phones</h4>
+					<ul>
+						<li>Android devices only</li>
+					</ul>
+				</div>
+			</div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascripts/bootstrap/bootstrap-buttons.js"></script>
+	<script>
+	(function($, socket, userName){
+		if ( !socket ) {
+			return ;
+		}
+
+		var tbody = $('#uuidList');
+
+		socket.on('deviceUpdateFor_'+userName, function (data) {
+			var contents = []
+			  , target = data.target
+			  ;
+
+			if ( Object.keys(target).length ) {
+				for ( var uuid in target ) {
+					contents.push('<tr>');
+					contents.push('<td><input type="checkbox" name="devices" checked="checked" /></td>');
+					contents.push('<td>'+target[uuid].devid+'</td>');
+					contents.push('<td>'+target[uuid].osver+'</td>');
+					contents.push('<td class="uuid">'+uuid+'</td>');
+					contents.push('</tr>');
+				}
+			} else {
+				contents.push('<tr>');
+				contents.push('<td colspan="4">There\'s no device.</td>');
+				contents.push('</tr>');
+			}
+			tbody.html(contents.join(''));
+			
+			var devices = $('input[name=devices, checked="checked"]')
+
+			if ( devices.length == $('input[name=devices]').length ) {
+				$('#btnSelectAll').checked();
+			}
+			
+		});
+
+		function isValidUrl(url){
+			return /^(http|https|ftp):\/\/(([A-Z0-9][A-Z0-9_-]*)(\.[A-Z0-9][A-Z0-9_-]*)+)(:(\d+))?\/?/i.test(url);
+		}	
+
+		$('#btn').button();
+
+		$('#btn').click(function () {
+			var uuids = []
+			  , url = $('#url').val()
+			  , checkbox
+			  , uuid
+			  ;
+
+			$('#url').css('border-color', '#CCC');
+
+			if ( !url.length ) {
+				$('#url').css('border-color', '#EE5F5B');
+				alert('URL must be valid.');
+				return ;
+			}
+
+			url = url.indexOf('http://') == -1 ? 'http://'+url : url;
+
+			if ( !isValidUrl(url) ) {
+				$('#url').css('border-color', '#EE5F5B');
+				alert('Invalid URL');
+				$('#url').focus();
+				return ;
+			}
+	
+			var rows = tbody.find("tr");
+
+			if ( !rows.find('td.uuid').length ) {
+				alert('There\'s no device.');
+				return ;
+			}
+		
+			rows.each(function(idx){
+				var checkbox = rows[idx].cells[0].firstChild;
+				var uuid = rows[idx].cells[3].innerHTML;
+				
+				if ( checkbox.checked ) {
+					console.log('selected', uuid);
+					uuids.push(uuid);
+				}
+			});
+
+			if ( !uuids.length ) {
+				alert('You must select one of your devices at least');
+				return ;
+			}
+
+			$('#btn').removeClass('primary').addClass('danger').button('loading');
+			setTimeout(function(){
+				socket.emit('broadcastUrl', {userName : userName, uuids : uuids, url : url});
+				$('#btn').removeClass('danger').addClass('primary').button('reset');
+				alert('Sent URL to the devices');
+			},1000);
+		});
+
+		$('#btnSelectAll').click(function () {
+			var isChecked = this.checked
+			  , devices = $('input[name=devices]')
+			  ;
+
+			if ( !devices.length ) {
+				alert('There\'s no devices.');
+				this.checked = "";
+				this.focus();
+				return ;
+			}
+
+			devices.each(function(){ this.checked = isChecked; });
+		});
+		
+		$('#url').keydown(function (e) {
+			if ( e.keyCode != 13 ) {
+				return ;
+			}
+			$('#btn').click();
+		});
+		
+		$('#username').keydown(function (e) {
+			if ( e.keyCode != 13 ) {
+				return ;
+			}
+			
+			$('#userpage').click();
+		});
+	})(jQuery, io.connect(), '<%=userName%>');
+	</script>

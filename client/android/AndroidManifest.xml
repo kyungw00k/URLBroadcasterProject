@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="kyungw00k.UrlReceiver"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        
+        <!-- Here's what we add -->
+        <service
+            android:name="kyungw00k.UrlReceiver.ReceiverService"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="kyungw00k.UrlReceiver.ReceiverService" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="kyungw00k.UrlReceiver.SwitchWidgetProvider"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="kyungw00k.UrlReceiver.SwitchWidgetProvider.CLICK" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget" />
+        </receiver>
+        <activity android:name="kyungw00k.UrlReceiver.SettingActivity"></activity>
+    </application>
+	<uses-sdk android:minSdkVersion="7"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+</manifest>
