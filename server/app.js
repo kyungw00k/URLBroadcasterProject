@@ -47,10 +47,6 @@ app.get('/', function(req,res){
 	res.render('user', { userName : 'guest' , target : user['guest'].device });	
 });
 
-app.get('/api', function(req,res){
-	res.render('api', { userName : null } );
-});
-
 app.get('/:id', function(req,res){
 	var userName = req.params.id || 'guest';
 	if ( !user[userName] ) {
