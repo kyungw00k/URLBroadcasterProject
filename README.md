@@ -13,16 +13,22 @@ Make easy to send a URL to the mobile devices. :D
 
 How To Use
 ----
-* Step 1. Install Client
-	* Option 1 - Download .apk file
-	* Option 2 - Build yourself
-* Step 2. Configure Client
+Step 1. Install Client
+* Option 1 - Download .apk file
+* Option 2 - Build yourself
+
+Step 2. Configure Client
 ![Original icon][img-signs]
-	* Touch icon above if you change the server url or user id.
-* Step 3. Turn on the switch!
+* Touch icon above if you change the server url or user id.
+
+
+Step 3. Turn on the switch!
 ![Original icon][img-on]
-* Step 4. Use Website
-* Step 5. Send URL!
+
+Step 4. Use Website
+    http://urlcoder.nodester.com/
+
+Step 5. Send URL!
 
 API
 -----
