@@ -9,9 +9,7 @@ Don't type URL every single device!
 
 Make easy to send a URL to the mobile devices. :D
 
-Demo
-----
-<iframe src="http://player.vimeo.com/video/35988619?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+If you still don't get it, [see the demo](http://vimeo.com/35988619 "Demo")
 
 How To Use
 ----
