@@ -48,7 +48,7 @@ app.get('/', function(req,res){
 });
 
 app.get('/api', function(req,res){
-	res.render('api');
+	res.render('api', { userName : null } );
 });
 
 app.get('/:id', function(req,res){

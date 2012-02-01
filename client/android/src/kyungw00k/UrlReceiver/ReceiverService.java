@@ -84,6 +84,7 @@ public class ReceiverService extends Service {
 				switchTurnOff(true);
 				return;
 			}
+			showNotification(true);
 		}
 
 		@Override
@@ -101,7 +102,7 @@ public class ReceiverService extends Service {
 					e1.printStackTrace();
 				}
 				if (uuid.equals(getDeviceUUID())) {
-					displayMessage("Move to " + url);
+					displayMessage("Go to " + url);
 					Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 					if (intent != null) {
 						intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
@@ -259,7 +260,6 @@ public class ReceiverService extends Service {
 			e.printStackTrace();
 			return;
 		}
-		showNotification(true);
 	}
 
 	@Override
