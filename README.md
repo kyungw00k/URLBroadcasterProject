@@ -1,5 +1,3 @@
-![Original icon][img-on]
-
 URL Broadcaster
 =====
 
@@ -10,6 +8,10 @@ What is URL Broadcaster?
 Don't type URL every single device!
 
 Make easy to send a URL to the mobile devices. :D
+
+Demo
+----
+<iframe src="http://player.vimeo.com/video/35988619?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 How To Use
 ----
@@ -24,8 +26,69 @@ How To Use
 * Step 4. Visit Website(http://urlcoder.nodester.com/)
 * Step 5. Send URL!
 
+If you want to run your own server, checkout `server` and run command below.
+
+	$ npm install .
+	$ node app.js
+	
+Then, change the target server infomation in client app. That's all. :D
+	
 API
 -----
+### Client #
+* deviceOn Event
+	* Client send the device infomation to the server when socket has connected.
+
+			{ username : '', uuid : '', devid : '', osver : '' }
+
+* deviceOff Event
+	* Client send the device infomation to the server before socket has disconnected.
+
+			{ username : '', uuid : '', devid : '', osver : '' }
+
+* `usename` Event
+	* Server push the URL to the target device.
+
+			{ url : '', uuid : '' }
+
+### Server #
+
+#### Routing #
+* Frontpage
+
+		/
+
+* `username` page
+
+		/:id
+
+#### Socket.io #
+
+* `deviceOn` / `deviceOff` Event
+	* Get the device infomation from client, then broadcast to the specific user page.
+	* When `deviceOff`` occurs, simply delete target device info from memory, not from db.
+	* Broadcast deviceUpdateFor_`username` event
+
+			{
+				userName : '', 
+				target : {
+					/* connected device info */
+					`uuid` : {
+						devid : '' /* Model Id */
+						osver : '' /* OS Version */
+					}
+				}
+			}
+
+* `broadcastUrl` Event
+	* When user select the devices from user web page, then server send the url to the chosen devices .
+	* If, the URL valid, then broadcast `username` event
+
+			{
+				uuid : '', /* Device UUID */
+				url : '' /* URL */
+			}
+
 
 Supported phones
 ----
