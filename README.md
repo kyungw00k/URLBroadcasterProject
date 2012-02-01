@@ -1,7 +1,7 @@
+![Original icon][img-on]
 
 URL Broadcaster
 =====
-![Original icon][img-on]
 
 What is URL Broadcaster?
 ----
@@ -13,22 +13,16 @@ Make easy to send a URL to the mobile devices. :D
 
 How To Use
 ----
-Step 1. Install Client
-* Option 1 - Download .apk file
-* Option 2 - Build yourself
+<img src="https://github.com/kyungw00k/UrlBroadcaster/raw/master/client/android/res/drawable-hdpi/off.png" height="96" style="display:inline"/><img src="https://github.com/kyungw00k/UrlBroadcaster/raw/master/client/android/res/drawable-hdpi/signs.png" height="96" style="display:inline"/>
 
-Step 2. Configure Client
-![Original icon][img-signs]
-* Touch icon above if you change the server url or user id.
-
-
-Step 3. Turn on the switch!
-![Original icon][img-on]
-
-Step 4. Use Website
-    http://urlcoder.nodester.com/
-
-Step 5. Send URL!
+* Step 1. Install Client
+ * Option 1 - Build yourself
+ * Option 2 - Download .apk file
+* Step 2. Configure Client
+ * Touch the icon on the right side of the switch if you change the server url or user id.
+* Step 3. Turn on the switch!
+* Step 4. Visit Website(http://urlcoder.nodester.com/)
+* Step 5. Send URL!
 
 API
 -----
