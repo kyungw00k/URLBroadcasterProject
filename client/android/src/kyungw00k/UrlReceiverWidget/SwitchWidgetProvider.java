@@ -1,5 +1,6 @@
-package kyungw00k.UrlReceiver;
+package kyungw00k.UrlReceiverWidget;
 
+import kyungw00k.UrlReceiverWidget.R;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -21,7 +22,7 @@ public class SwitchWidgetProvider extends AppWidgetProvider {
 	@SuppressWarnings("unused")
 	private static final String TAG = SwitchWidgetProvider.class.getSimpleName();
 
-	static final String CLICK_ACTION = "kyungw00k.UrlReceiver.SwitchWidgetProvider.CLICK";
+	static final String CLICK_ACTION = "kyungw00k.UrlReceiverWidget.SwitchWidgetProvider.CLICK";
 	static final String CHECKED = "checked";
 
 	private boolean isChecked = false;

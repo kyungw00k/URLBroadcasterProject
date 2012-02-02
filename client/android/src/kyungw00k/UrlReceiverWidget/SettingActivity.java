@@ -1,5 +1,6 @@
-package kyungw00k.UrlReceiver;
+package kyungw00k.UrlReceiverWidget;
 
+import kyungw00k.UrlReceiverWidget.R;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;

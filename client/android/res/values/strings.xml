@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="remote_server">http://urlcoder.nodester.com</string>
-	<string name="app_name">URL Receiver Widget</string>
-	<string name="remote_service_started">URL Receiver Service has started</string>
-	<string name="remote_service_stopped">URL Receiver Service has stopped</string>
-	<string name="remote_service_restart">URL Receiver Service has restarted</string>
-	<string name="remote_service_configuration">Widget Configuration</string>
-	<string name="remote_service_label">URL Receiver Service</string>
+
+    <string name="app_name">URL Receiver Widget</string>
+    <string name="app_version">1.1</string>
+    <string name="remote_server">http://urlcoder.nodester.com</string>
+    <string name="remote_service_started">URL Receiver Service has started</string>
+    <string name="remote_service_stopped">URL Receiver Service has stopped</string>
+    <string name="remote_service_restart">URL Receiver Service has restarted</string>
+    <string name="remote_service_configuration">Widget Configuration</string>
+    <string name="remote_service_label">URL Receiver Service</string>
+
 </resources>

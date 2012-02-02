@@ -1,4 +1,4 @@
-package kyungw00k.UrlReceiver;
+package kyungw00k.UrlReceiverWidget;
 
 import io.socket.IOAcknowledge;
 import io.socket.IOCallback;
@@ -10,6 +10,8 @@ import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URLEncoder;
 import java.util.UUID;
+
+import kyungw00k.UrlReceiverWidget.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
