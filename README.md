@@ -16,7 +16,7 @@ How To Use
 <img src="https://github.com/kyungw00k/UrlBroadcaster/raw/master/client/android/res/drawable-hdpi/off.png" height="96" style="display:inline"/><img src="https://github.com/kyungw00k/UrlBroadcaster/raw/master/client/android/res/drawable-hdpi/signs.png" height="96" style="display:inline"/>
 
 * Step 1. Install Client
- * Option 1 - [Install through Android Market](https://market.android.com/details?id=kyungw00k.UrlReceiver  "Market URL")
+ * Option 1 - [Install through Android Market](https://market.android.com/details?id=kyungw00k.UrlReceiverWidget "Market URL")
  * Option 2 - Build yourself
 * Step 2. Configure Client
  * Touch the icon on the right side of the switch if you change the server url or user id.
