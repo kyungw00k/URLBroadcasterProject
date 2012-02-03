@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="kyungw00k.UrlReceiverWidget"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="3"
+    android:versionName="1.2" >
+
+    <uses-sdk android:minSdkVersion="4" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:icon="@drawable/icon"
         android:label="@string/app_name" >
         <service
-            android:name="kyungw00k.UrlReceiverWidget.ReceiverService"
+            android:name=".ReceiverService"
             android:process=":remote" >
             <intent-filter>
                 <action android:name="kyungw00k.UrlReceiverWidget.ReceiverService" />
@@ -31,10 +36,5 @@
         <activity android:name="kyungw00k.UrlReceiverWidget.SettingActivity" >
         </activity>
     </application>
-
-    <uses-sdk android:minSdkVersion="7" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
 </manifest>
