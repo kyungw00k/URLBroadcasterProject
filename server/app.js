@@ -21,13 +21,6 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
-});
-
-app.configure('development', function(){
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
-});
-
-app.configure('production', function(){
   app.use(express.errorHandler()); 
   io.enable('browser client minification');  // send minified client
   io.enable('browser client etag');          // apply etag caching logic based on version number
@@ -47,6 +40,10 @@ app.get('/', function(req,res){
 	res.render('user', { userName : 'guest' , target : user['guest'].device });	
 });
 
+app.get('/api', function(req,res){
+	res.render('api');
+});
+
 app.get('/:id', function(req,res){
 	var userName = req.params.id || 'guest';
 	if ( !user[userName] ) {
@@ -56,7 +53,7 @@ app.get('/:id', function(req,res){
 	res.render('user', { userName : userName , target : user[userName].device });	
 });
 
-app.listen(9998);
+app.listen(13608);
 
 io.sockets.on('connection', function (socket) {
 	/**
@@ -117,6 +114,6 @@ io.sockets.on('connection', function (socket) {
 
 // URL Validation
 function isValidUrl(url){
-	return /^(http|https|ftp):\/\/(([A-Z0-9][A-Z0-9_-]*)(\.[A-Z0-9][A-Z0-9_-]*)+)(:(\d+))?\/?/i.test(url);
-}
-
+	var urlregex = new RegExp("^(http|https|ftp)\://([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(/($|[a-zA-Z0-9\.\,\?\'\\\+&amp;%\$#\=~_\-]+))*$");
+	return urlregex.test(url);
+}	

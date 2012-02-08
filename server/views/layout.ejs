@@ -21,7 +21,7 @@
 					<ul class="nav">
 						<li><a href="https://github.com/kyungw00k/UrlBroadcaster" target="_blank">API</a></li>
 					</ul>
-					<form action="/" class="pull-right">
+					<form action="/" class="pull-right" onsubmit="setTimeout(function(){location.href = '/' + $('input[id=username]').val();},100);return false;">
 					<% if ( !userName ||  userName === 'guest' ) { %>
 						<input class="input-small" id="username" type="text" placeholder="User ID">
 						<button class="btn primary" id="userpage" type="button" onclick="location.href = '/' + $('input[id=username]').val();">Make</button>
