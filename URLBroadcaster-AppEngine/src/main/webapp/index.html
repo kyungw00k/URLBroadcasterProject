@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Broadcaster</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/icon.png">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="/css/base.css">
+
+</head>
+
+<body>
+<!-- Begin page content -->
+<div class="container">
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+            <li class="active" id="authLayer" style="display:none"><a href="#" id="authBtn">Sign In</a></li>
+            <li><a href="https://market.android.com/details?id=kyungw00k.UrlReceiverWidget" target="market-store">Get
+                App</a></li>
+            <li><a href="https://github.com/kyungw00k/urlBroadcaster" target="github">Github</a></li>
+            <li><a href="mailto:parksama@gmail.com">Mail Me</a></li>
+        </ul>
+        <h3 class="text-muted">URL Broadcaster</h3>
+    </div>
+
+
+    <div id="spinner">
+        <h3>Loading...</h3><br />
+        <img src="/img/spinner.gif" border="0"/>
+    </div>
+
+
+    <!-- LOGIN REQUIRED -->
+    <div id="login" style="display:none">
+        <div class="jumbotron">
+            <h1><img src="/img/icon.png" border="0"/></h1>
+
+            <p class="lead">Don't type URL every single mobile devices!<br/>Not any more!</p>
+
+            <p><a class="btn btn-lg btn-info" href="http://vimeo.com/35988619" target="demo">Demo</a></p>
+        </div>
+    </div>
+
+
+    <div id="logout" style="display:none">
+
+        <div id="successArea" style="display:none" class="alert alertStyle alert-success fade in">
+            Message Sent!
+        </div>
+
+        <div id="alertArea" style="display:none" class="alert alertStyle">
+            <button type="button" class="close">&times;</button>
+            <div id="alertContentArea"></div>
+        </div>
+
+        <div class="input-group">
+            <input type="text" class="form-control" id="inputMessage" placeholder="URL">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" id="sendButton" type="button"><span
+                            class="glyphicon glyphicon-send"></span> Send
+                    </button>
+                  </span>
+        </div>
+
+        <div class="regDevicesSection">
+            <h3>Registered Devices </h3>
+            <table class="table table-striped" id="regDevicesTable">
+                <thead>
+                <tr>
+                    <th>Device Name</th>
+                    <th>Timestamp</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="2">Searching for registered devices...</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; <a href="https://twitter.com/kyungw00k/">kyungw00k</a></p>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//code.jquery.com/jquery.js"></script>
+
+<!-- Spinner -->
+<script src="/js/base.js"></script>
+
+<!-- JavaScript -->
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-20092249-3', 'url-broadcaster.appspot.com');ga('send', 'pageview');
+</script>
+
+</body>
+</html>

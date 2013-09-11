@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.5.+'
+    }
+}
+
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+    maven {
+        url "https://raw.github.com/slorber/gcm-server-repository/master/releases/"
+    }
+}
+
+dependencies {
+    compile project(':URLBroadcaster-endpoints')
+
+    compile 'com.android.support:support-v4:18.0.0'
+    compile 'com.google.android.gms:play-services:3.2.25'
+
+    compile files('libs/libGoogleAnalyticsV2.jar')
+}
+
+android {
+    compileSdkVersion "Google Inc.:Google APIs:17"
+    buildToolsVersion "17.0.0"
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 16
+    }
+}

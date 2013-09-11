@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="110dp"
+    android:padding="0dp"
+     >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#aa000000">
+
+        <ImageButton
+            android:id="@+id/onoff"
+            android:layout_width="92dp"
+            android:layout_height="110dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/off"
+            android:padding="0dp"/>
+
+        <ImageButton
+            android:id="@+id/config"
+            android:layout_width="77dp"
+            android:layout_height="110dp"
+            android:src="@drawable/signs"
+            android:scaleType="fitXY"
+            android:padding="0dp"/>
+    </LinearLayout>
+
+</FrameLayout>
