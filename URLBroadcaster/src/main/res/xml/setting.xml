@@ -3,12 +3,18 @@
     <PreferenceCategory android:title="Setting">
         <Preference
                 android:title="Choose an account"
-                android:key="kyungw00k.UrlReceiverWidget"/>
+                android:summary="Choose from a list of accounts."
+                android:key="kyungw00k.URLBroadcaster"/>
     </PreferenceCategory>
     <PreferenceCategory android:title="Resources">
+        <Preference
+                android:title="Visit website"
+                android:summary="If you want to use app, you should click this."
+                android:key="site"/>
 
         <Preference
                 android:title="Github"
+                android:summary="Yes, it's open source."
                 android:key="github"/>
 
         <Preference

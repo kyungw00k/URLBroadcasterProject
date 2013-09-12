@@ -5,14 +5,15 @@
 # files for the dex VM
 *.dex
 
+# IDEA
 *.iml
+.idea/
+.gradle/
 
 # Java class files
 *.class
 
 # generated files
+*.log
 build/
 target/
-
-# Local configuration file (sdk path, etc)
-local.properties
