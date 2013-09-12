@@ -23,8 +23,6 @@ How To Use
 * Step 4. [Visit Website](http://url-broadcaster.appspot.com/)
 * Step 5. Send URL!
 
-Then, change the target server infomation in client app. That's all. :D
-
 Supported phones
 ----
 * Android devices only
