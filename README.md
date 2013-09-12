@@ -18,7 +18,7 @@ How To Use
 
 * Step 1. [Install through Android Market](https://play.google.com/store/apps/details?id=kyungw00k.URLBroadcaster)
 * Step 2. Configure Client
- * Touch the icon on the right side of the switch if you change the server url or user id.
+ * Touch the icon on the right side of the switch, then select the google account to use.
 * Step 3. Turn on the switch!
 * Step 4. [Visit Website](http://url-broadcaster.appspot.com/)
 * Step 5. Send URL!
