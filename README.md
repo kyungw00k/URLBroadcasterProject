@@ -4,6 +4,8 @@
     \____/_/|_/____/ /____/_/  \___/\_,_/\_,_/\__/\_,_/___/\__/\__/_/   
                                                              @ kyungw00k
 
+[![Build Status](https://travis-ci.org/kyungw00k/URLBroadcasterProject.png?branch=master)](https://travis-ci.org/kyungw00k/URLBroadcasterProject)
+
 What is URL Broadcaster?
 ----
 Don't type URL every single device!<br />
