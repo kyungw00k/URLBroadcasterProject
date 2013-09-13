@@ -6,9 +6,7 @@
 
 What is URL Broadcaster?
 ----
-
-Don't type URL every single device!
-
+Don't type URL every single device!<br />
 Make easy to send a URL to the mobile devices. :D
 
 If you still don't get it, [see the demo](http://vimeo.com/35988619 "Demo")
@@ -22,6 +20,11 @@ How To Use
 * Step 3. Turn on the switch!
 * Step 4. [Visit Website](http://url-broadcaster.appspot.com/)
 * Step 5. Send URL!
+
+Screenshot
+----
+![](https://lh5.ggpht.com/rzx--PhGapgmevvm95x6gUOcgVpJX3XGrtDAQXwEzXBSmzWuHc_XTF7pIV4kqP3Owp53=h900-rw)
+![](https://lh6.ggpht.com/m8M8Q3FT1a0JWo_f4SsLe3sei7yLxGUCiPg8wsWiAIQcxyjFM8kAHUkMF4zOqHd-EA=h900-rw)
 
 Supported phones
 ----
