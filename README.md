@@ -4,9 +4,9 @@
     \____/_/|_/____/ /____/_/  \___/\_,_/\_,_/\__/\_,_/___/\__/\__/_/   
                                                              @ kyungw00k
 
-[![Build Status](https://travis-ci.org/kyungw00k/URLBroadcasterProject.png?branch=master)](https://travis-ci.org/kyungw00k/URLBroadcasterProject)
+[![Google Play](http://developer.android.com/images/brand/en_generic_rgb_wo_45.png)](https://play.google.com/store/apps/details?id=kyungw00k.URLBroadcaster) [![Build Status](https://travis-ci.org/kyungw00k/URLBroadcasterProject.png?branch=master)](https://travis-ci.org/kyungw00k/URLBroadcasterProject)
 
-What is URL Broadcaster?
+What is URL Broadcaster? 
 ----
 Don't type URL every single device!<br />
 Make easy to send a URL to the mobile devices. :D
